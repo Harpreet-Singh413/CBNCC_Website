@@ -1,77 +1,49 @@
 import { 
-  FiGlobe, 
-  FiSmartphone, 
-  FiCpu, 
-  FiTerminal, 
-  FiLayers, 
-  FiShield, 
-  FiCloud, 
-  FiGitBranch 
-} from 'react-icons/fi';
+  SiCplusplus, 
+  SiPython, 
+  SiJavascript, 
+  SiRust, 
+  SiReact, 
+  SiNodedotjs, 
+  SiNextdotjs, 
+  SiTailwindcss, 
+  SiSocketdotio, 
+  SiFlutter, 
+  SiKotlin, 
+  SiSwift, 
+  SiTensorflow, 
+  SiOpencv, 
+  SiDocker, 
+  SiGithub, 
+  SiFirebase
+} from 'react-icons/si';
+
+import { FaCss3, FaJava, FaAws } from 'react-icons/fa';
 
 export const domainsData = [
-  {
-    id: 'web-dev',
-    title: 'Web Development',
-    description: 'Crafting responsive, secure, and lightning-fast digital solutions using cutting-edge frameworks.',
-    icon: FiGlobe,
-    accentColor: 'from-[#111111]/30 to-[#555555]/10',
-    tag: 'Web & Interaction'
-  },
-  {
-    id: 'app-dev',
-    title: 'App Development',
-    description: 'Building high-performance native and cross-platform mobile systems for modern devices.',
-    icon: FiSmartphone,
-    accentColor: 'from-[#111111]/30 to-[#8E8E93]/20',
-    tag: 'Mobile Systems'
-  },
-  {
-    id: 'ai-ml',
-    title: 'AI / ML',
-    description: 'Developing intelligence via deep neural networks, predictive models, and custom data pipelines.',
-    icon: FiCpu,
-    accentColor: 'from-[#555555]/30 to-[#C8C7C8]/10',
-    tag: 'Intelligence Systems'
-  },
-  {
-    id: 'comp-prog',
-    title: 'Competitive Programming',
-    description: 'Sharpening logic, efficiency, and algorithmic speed to dominate in global contests.',
-    icon: FiTerminal,
-    accentColor: 'from-[#111111]/40 to-[#A3A3A3]/20',
-    tag: 'Algorithms'
-  },
-  {
-    id: 'ui-ux',
-    title: 'UI / UX Design',
-    description: 'Crafting responsive user experiences, clean interfaces, and beautiful digital systems.',
-    icon: FiLayers,
-    accentColor: 'from-[#8E8E93]/30 to-[#ECEBEC]/50',
-    tag: 'Human Interface'
-  },
-  {
-    id: 'cybersec',
-    title: 'Cybersecurity',
-    description: 'Securing assets, auditing complex systems, and implementing defense cryptography.',
-    icon: FiShield,
-    accentColor: 'from-[#111111]/30 to-[#555555]/15',
-    tag: 'Security & Trust'
-  },
-  {
-    id: 'cloud',
-    title: 'Cloud Computing',
-    description: 'Architecting scalable serverless clusters, automated pipelines, and cloud infra.',
-    icon: FiCloud,
-    accentColor: 'from-[#555555]/20 to-[#A3A3A3]/30',
-    tag: 'Cloud & Infrastructure'
-  },
-  {
-    id: 'open-source',
-    title: 'Open Source',
-    description: 'Building shared packages, collaborating on global libraries, and shaping tools.',
-    icon: FiGitBranch,
-    accentColor: 'from-[#111111]/40 to-[#C8C7C8]/20',
-    tag: 'Global Tech'
-  }
+  { id: 'cplusplus', name: 'C++', icon: SiCplusplus, color: '#00599C' },
+  { id: 'python', name: 'Python', icon: SiPython, color: '#3776AB' },
+  { id: 'javascript', name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+  { id: 'rust', name: 'Rust', icon: SiRust, color: '#CE412B' },
+  { id: 'css3', name: 'CSS3', icon: FaCss3, color: '#1572B6' },
+  { id: 'react', name: 'React', icon: SiReact, color: '#61DAFB' },
+  { id: 'nodejs', name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
+  { id: 'nextjs', name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
+  { id: 'tailwindcss', name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
+  { id: 'socketio', name: 'Socket.io', icon: SiSocketdotio, color: '#010101' },
+  { id: 'reactnative', name: 'React Native', icon: 'ai-file', color: '#FF9A00' },
+  { id: 'flutter', name: 'Flutter', icon: SiFlutter, color: '#02569B' },
+  { id: 'kotlin', name: 'Kotlin', icon: SiKotlin, color: '#7F52FF' },
+  { id: 'swift', name: 'Swift', icon: SiSwift, color: '#F05138' },
+  { id: 'tensorflow', name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
+  { id: 'opencv', name: 'OpenCV', icon: SiOpencv, color: '#5C3EE6' },
+  { id: 'java', name: 'Java', icon: FaJava, color: '#007396' },
+  { id: 'pandas', name: 'Pandas', icon: 'pandas', color: '#150458' },
+  { id: 'docker', name: 'Docker', icon: SiDocker, color: '#2496ED' },
+  { id: 'github', name: 'GitHub', icon: SiGithub, color: '#181717' },
+  { id: 'firebase', name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
+  { id: 'aws', name: 'AWS', icon: FaAws, color: '#FF9900' },
+  { id: 'ethicalhacking', name: 'Ethical Hacking', icon: 'hacking', color: '#00FF00' },
+  { id: 'blockchain', name: 'Blockchain', icon: 'blockchain', color: '#F7931A' }
 ];
+

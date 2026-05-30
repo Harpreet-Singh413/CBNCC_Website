@@ -1,14 +1,74 @@
 import { motion } from 'framer-motion';
 import { domainsData } from '../data/domains';
 
+// Custom high-fidelity SVGs for specific technologies to match the original style
+const AiIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <polyline points="14 2 14 8 20 8" />
+    <text x="50%" y="60%" dominantBaseline="middle" textAnchor="middle" fontSize="6.5" fontWeight="900" fontFamily="sans-serif" fill="currentColor" stroke="none">AI</text>
+  </svg>
+);
+
+const PandasIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    {/* Left Column */}
+    <rect x="4" y="8" width="3.5" height="4.5" rx="0.5" />
+    <rect x="4" y="14" width="3.5" height="6.5" rx="0.5" />
+    {/* Middle Column */}
+    <rect x="10.25" y="4" width="3.5" height="5.5" rx="0.5" />
+    <rect x="10.25" y="11" width="3.5" height="3.5" rx="0.5" fill="#EC4899" />
+    <rect x="10.25" y="16" width="3.5" height="4" rx="0.5" />
+    {/* Right Column */}
+    <rect x="16.5" y="6" width="3.5" height="5" rx="0.5" />
+    <rect x="16.5" y="12.5" width="3.5" height="7.5" rx="0.5" />
+  </svg>
+);
+
+const HackingIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    {/* Monitor Frame */}
+    <rect x="2" y="3" width="20" height="13" rx="2" />
+    {/* Monitor Stand */}
+    <line x1="12" y1="16" x2="12" y2="21" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    {/* Detective / Hacker Hat & Glasses */}
+    <path d="M7 12c0-1.8 1-3 5-3s5 1.2 5 3" />
+    <line x1="5.5" y1="10.5" x2="18.5" y2="10.5" strokeWidth="2.2" />
+    <circle cx="9.5" cy="12.5" r="1.2" fill="currentColor" stroke="none" />
+    <circle cx="14.5" cy="12.5" r="1.2" fill="currentColor" stroke="none" />
+    <line x1="10.7" y1="12.5" x2="13.3" y2="12.5" />
+  </svg>
+);
+
+const BlockchainIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    {/* Pixelated Capital B */}
+    <rect x="4" y="3" width="3" height="18" />
+    <rect x="7" y="3" width="8" height="3" />
+    <rect x="15" y="6" width="3" height="4" />
+    <rect x="7" y="10" width="8" height="3" />
+    <rect x="15" y="13" width="3" height="5" />
+    <rect x="7" y="18" width="9" height="3" />
+    {/* Glitch nodes around it */}
+    <rect x="19" y="4" width="2" height="2" />
+    <rect x="1" y="8" width="1.5" height="1.5" />
+    <rect x="20" y="10" width="2" height="2" />
+    <rect x="1" y="15" width="2" height="2" />
+    <rect x="19" y="16" width="1.5" height="1.5" />
+    <rect x="11" y="14" width="2" height="2" />
+    <rect x="12" y="7" width="2" height="2" />
+  </svg>
+);
+
 export default function OurDomains() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1
+        staggerChildren: 0.05,
+        delayChildren: 0.05
       }
     }
   };
@@ -16,13 +76,13 @@ export default function OurDomains() {
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      y: 40 
+      y: 30 
     },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -49,8 +109,18 @@ export default function OurDomains() {
     }
   };
 
+  const renderIcon = (tech, className) => {
+    if (tech.icon === 'ai-file') return <AiIcon className={className} />;
+    if (tech.icon === 'pandas') return <PandasIcon className={className} />;
+    if (tech.icon === 'hacking') return <HackingIcon className={className} />;
+    if (tech.icon === 'blockchain') return <BlockchainIcon className={className} />;
+    
+    const IconComponent = tech.icon;
+    return <IconComponent className={className} />;
+  };
+
   return (
-    <section className="relative w-full py-24 md:py-32 px-6 md:px-12 xl:px-24 bg-[#ECEBEC] overflow-hidden select-none">
+    <section className="relative w-full py-10 md:py-14 px-4 md:px-8 xl:px-12 bg-[#ECEBEC] overflow-hidden select-none">
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
         style={{
@@ -75,15 +145,15 @@ export default function OurDomains() {
         className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] rounded-full bg-white/60 filter blur-[120px] pointer-events-none"
       />
 
-      <div className="relative max-w-7xl mx-auto z-10">
+      <div className="relative max-w-[90rem] mx-auto z-10">
         
-        <div className="text-center mb-16 md:mb-24">
+        <div className="text-center mb-8 md:mb-10">
           <motion.span 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block font-space text-[11px] font-bold tracking-[0.3em] uppercase text-brand-dark/50 bg-white/50 backdrop-blur-md border border-white/60 px-4 py-1.5 rounded-full mb-4 shadow-[0_2px_10px_rgba(0,0,0,0.01)]"
+            className="inline-block font-space text-[10px] font-bold tracking-[0.28em] uppercase text-brand-dark/50 bg-white/50 backdrop-blur-md border border-white/60 px-4 py-1 rounded-full mb-3 shadow-[0_2px_10px_rgba(0,0,0,0.01)]"
           >
             CBNCC Ecosystem
           </motion.span>
@@ -93,7 +163,7 @@ export default function OurDomains() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sora text-4xl md:text-6xl font-extrabold text-brand-dark tracking-tight mb-6"
+            className="font-sora text-5xl md:text-6xl font-extrabold text-brand-dark tracking-tight mb-3"
           >
             Our Domains
           </motion.h2>
@@ -103,7 +173,7 @@ export default function OurDomains() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-space text-base md:text-xl text-brand-muted max-w-2xl mx-auto leading-relaxed"
+            className="font-space text-base md:text-lg text-brand-muted max-w-4xl mx-auto leading-relaxed"
           >
             Explore the core technology pillars driving developer communities, shaping engineering talents, and engineering software products.
           </motion.p>
@@ -114,45 +184,32 @@ export default function OurDomains() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-5 xl:gap-6 w-full max-w-[calc(100vw-8rem)] 2xl:max-w-[104rem] mx-auto"
         >
-          {domainsData.map((domain) => {
-            const Icon = domain.icon;
+          {domainsData.map((tech) => {
             return (
               <motion.div
-                key={domain.id}
+                key={tech.id}
                 variants={cardVariants}
-                className="group relative flex flex-col h-[260px] p-8 rounded-3xl bg-white/35 backdrop-blur-xl border border-white/60 shadow-premium hover:shadow-premium-hover transition-shadow duration-500 overflow-hidden cursor-pointer"
+                style={{ '--hover-color': tech.color }}
+                className="group relative aspect-square flex items-center justify-center rounded-2xl bg-white/35 backdrop-blur-xl border border-white/60 shadow-premium hover:shadow-premium-hover transition-all duration-500 overflow-hidden cursor-pointer"
                 whileHover={{ 
-                  y: -8, 
-                  scale: 1.015,
-                  backgroundColor: 'rgba(255, 255, 255, 0.6)'
+                  y: -6, 
+                  scale: 1.03,
+                  backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                  boxShadow: `0 15px 30px ${tech.color}15`,
+                  borderColor: `${tech.color}40`
                 }}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                transition={{ type: "spring", stiffness: 450, damping: 28 }}
+                title={tech.name}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${domain.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
-
-                <div className="relative z-10 flex flex-col items-start">
-                  
-                  <div className="w-full flex items-center justify-between mb-8">
-                    {/* Icon Container with smooth Inversion on Hover */}
-                    <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/80 border border-white/90 text-brand-dark group-hover:bg-brand-dark group-hover:text-[#ECEBEC] group-hover:scale-110 shadow-sm transition-all duration-500">
-                      <Icon className="w-5 h-5 transition-transform duration-500 group-hover:rotate-6" />
-                    </div>
-                    
-                    <span className="font-space text-[10px] font-semibold text-brand-dark/40 group-hover:text-brand-dark/60 tracking-wider bg-white/20 px-2.5 py-1 rounded-md border border-white/30 transition-colors duration-300">
-                      {domain.tag}
-                    </span>
-                  </div>
-
-                  <h3 className="font-sora text-xl font-bold text-brand-dark mb-3 tracking-tight">
-                    {domain.title}
-                  </h3>
-                  <p className="font-space text-sm text-brand-muted leading-relaxed max-w-[90%] group-hover:text-brand-dark/80 transition-colors duration-300">
-                    {domain.description}
-                  </p>
+                <div className="relative z-10 flex items-center justify-center w-full h-full p-3">
+                  {renderIcon(tech, "w-20 h-20 md:w-24 md:h-24 xl:w-28 xl:h-28 text-brand-dark/85 group-hover:text-[var(--hover-color)] transition-colors duration-500")}
                 </div>
-                <div className="absolute inset-0 border border-brand-dark/0 group-hover:border-brand-dark/10 rounded-3xl pointer-events-none transition-colors duration-500" />
+                {/* Thin overlay border highlighting the brand color on hover */}
+                <div 
+                  className="absolute inset-0 border border-transparent group-hover:border-[var(--hover-color)]/20 rounded-2xl pointer-events-none transition-colors duration-500" 
+                />
               </motion.div>
             );
           })}
