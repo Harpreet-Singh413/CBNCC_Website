@@ -31,7 +31,7 @@ export const domainsData = [
   { id: 'nextjs', name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
   { id: 'tailwindcss', name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
   { id: 'socketio', name: 'Socket.io', icon: SiSocketdotio, color: '#010101' },
-  { id: 'reactnative', name: 'React Native', icon: 'ai-file', color: '#FF9A00' },
+  { id: 'reactnative', name: 'AI', icon: 'ai-file', color: '#FF9A00' },
   { id: 'flutter', name: 'Flutter', icon: SiFlutter, color: '#02569B' },
   { id: 'kotlin', name: 'Kotlin', icon: SiKotlin, color: '#7F52FF' },
   { id: 'swift', name: 'Swift', icon: SiSwift, color: '#F05138' },
