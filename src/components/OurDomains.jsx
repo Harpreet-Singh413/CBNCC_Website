@@ -120,21 +120,9 @@ export default function OurDomains() {
   };
 
   return (
-    <section id="domains" className="relative w-full py-10 md:py-14 px-4 md:px-8 xl:px-12 bg-[#ECEBEC] dark:bg-[#090A0D] overflow-hidden select-none transition-colors duration-300">
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.4] dark:hidden"
-        style={{
-          backgroundImage: `
-            radial-gradient(rgba(17, 17, 17, 0.08) 1.5px, transparent 1.5px),
-            linear-gradient(rgba(17, 17, 17, 0.01) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(17, 17, 17, 0.01) 1px, transparent 1px)
-          `,
-          backgroundSize: '24px 24px, 48px 48px, 48px 48px',
-          backgroundPosition: 'center center'
-        }}
-      />
+    <section id="domains" className="relative w-full py-10 md:py-14 px-4 md:px-8 xl:px-12 bg-[#090A0D] overflow-hidden select-none">
       <div
-        className="absolute inset-0 pointer-events-none hidden opacity-[0.28] dark:block"
+        className="absolute inset-0 pointer-events-none opacity-[0.28]"
         style={{
           backgroundImage: `
             radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px),
@@ -149,12 +137,12 @@ export default function OurDomains() {
       <motion.div 
         variants={blobVariants}
         animate="animate1"
-        className="absolute top-1/4 left-1/10 w-[400px] h-[400px] rounded-full bg-white/70 dark:bg-cyan-400/10 filter blur-[100px] pointer-events-none transition-colors duration-300"
+        className="absolute top-1/4 left-1/10 w-[400px] h-[400px] rounded-full bg-cyan-400/10 filter blur-[100px] pointer-events-none"
       />
       <motion.div 
         variants={blobVariants}
         animate="animate2"
-        className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] rounded-full bg-white/60 dark:bg-fuchsia-500/10 filter blur-[120px] pointer-events-none transition-colors duration-300"
+        className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] rounded-full bg-fuchsia-500/10 filter blur-[120px] pointer-events-none"
       />
 
       <div className="relative max-w-[90rem] mx-auto z-10">
@@ -165,7 +153,7 @@ export default function OurDomains() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block font-space text-[10px] font-bold tracking-[0.28em] uppercase text-brand-dark/50 dark:text-white/60 bg-white/50 dark:bg-white/[0.07] backdrop-blur-md border border-white/60 dark:border-white/10 px-4 py-1 rounded-full mb-3 shadow-[0_2px_10px_rgba(0,0,0,0.01)] transition-colors duration-300"
+            className="inline-block font-space text-[10px] font-bold tracking-[0.28em] uppercase text-white/60 bg-white/[0.07] backdrop-blur-md border border-white/10 px-4 py-1 rounded-full mb-3 shadow-[0_2px_10px_rgba(0,0,0,0.01)]"
           >
             CBNCC Ecosystem
           </motion.span>
@@ -175,7 +163,7 @@ export default function OurDomains() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sora text-6xl md:text-7xl lg:text-8xl font-extrabold text-brand-dark dark:text-white tracking-tight mb-3 transition-colors duration-300"
+            className="font-sora text-6xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight mb-3"
           >
             Our Domains
           </motion.h2>
@@ -185,7 +173,7 @@ export default function OurDomains() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-space text-base md:text-lg text-brand-muted dark:text-white/65 max-w-4xl mx-auto leading-relaxed transition-colors duration-300"
+            className="font-space text-base md:text-lg text-white/65 max-w-4xl mx-auto leading-relaxed"
           >
             Explore the core technology pillars driving developer communities, shaping engineering talents, and engineering software products.
           </motion.p>
@@ -204,7 +192,7 @@ export default function OurDomains() {
                 key={tech.id}
                 variants={cardVariants}
                 style={{ '--hover-color': tech.color }}
-                className="group relative aspect-square flex items-center justify-center rounded-2xl bg-white/35 dark:bg-white/[0.06] hover:bg-white/85 dark:hover:bg-white/[0.10] backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-premium dark:shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-premium-hover transition-all duration-500 overflow-hidden cursor-pointer"
+                className="group relative aspect-square flex items-center justify-center rounded-2xl bg-white/[0.06] hover:bg-white/[0.10] backdrop-blur-xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-premium-hover transition-all duration-500 overflow-hidden cursor-pointer"
                 whileHover={{ 
                   y: -6, 
                   scale: 1.03,
@@ -215,7 +203,7 @@ export default function OurDomains() {
                 title={tech.name}
               >
                 <div className="relative z-10 flex items-center justify-center w-full h-full p-3">
-                  {renderIcon(tech, "w-20 h-20 md:w-24 md:h-24 xl:w-28 xl:h-28 text-brand-dark/85 dark:text-white/80 group-hover:text-[var(--hover-color)] transition-colors duration-500")}
+                  {renderIcon(tech, "w-20 h-20 md:w-24 md:h-24 xl:w-28 xl:h-28 text-white/80 group-hover:text-[var(--hover-color)] transition-colors duration-500")}
                 </div>
                 {/* Thin overlay border highlighting the brand color on hover */}
                 <div 
