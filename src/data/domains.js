@@ -37,7 +37,7 @@ export const domainsData = [
   { id: 'swift', name: 'Swift', icon: SiSwift, color: '#F05138' },
   { id: 'tensorflow', name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
   { id: 'opencv', name: 'OpenCV', icon: SiOpencv, color: '#5C3EE6' },
-  { id: 'java', name: 'Java', icon: FaJava, color: '#007396' },
+  { id: 'java', name: 'Java', icon: FaJava, color: '#E76F00' },
   { id: 'pandas', name: 'Pandas', icon: 'pandas', color: '#150458' },
   { id: 'docker', name: 'Docker', icon: SiDocker, color: '#2496ED' },
   { id: 'github', name: 'GitHub', icon: SiGithub, color: '#181717' },
@@ -46,4 +46,3 @@ export const domainsData = [
   { id: 'ethicalhacking', name: 'Ethical Hacking', icon: 'hacking', color: '#00FF00' },
   { id: 'blockchain', name: 'Blockchain', icon: 'blockchain', color: '#F7931A' }
 ];
-
